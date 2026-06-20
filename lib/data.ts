@@ -4,6 +4,7 @@
 // ============================================================================
 
 export const profile = {
+  nickname: "parkky",
   name: "Parth Kale",
   title: "AI Engineer",
   tagline: "I draw intelligence onto the canvas — voice agents, LLMs & multimodal systems.",
