@@ -54,24 +54,27 @@ export function Arrow({
   return (
     <svg
       className={`sketch ${className}`}
-      viewBox="0 0 80 60"
+      viewBox="0 0 80 66"
       fill="none"
       aria-hidden
     >
+      {/* body — curves from upper-left to right-centre */}
       <path
-        d="M6 8C20 40 40 52 70 50"
+        d="M6 10C22 42 44 54 70 50"
         stroke={color}
         strokeWidth="3"
         strokeLinecap="round"
       />
+      {/* arrowhead upper arm — goes upper-left from tip */}
       <path
-        d="M70 50C62 47 56 44 52 38"
+        d="M70 50C62 46 56 42 50 36"
         stroke={color}
         strokeWidth="3"
         strokeLinecap="round"
       />
+      {/* arrowhead lower arm — goes lower-left from tip (symmetric V) */}
       <path
-        d="M70 50C66 44 65 38 67 31"
+        d="M70 50C62 54 56 57 50 60"
         stroke={color}
         strokeWidth="3"
         strokeLinecap="round"
