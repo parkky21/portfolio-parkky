@@ -7,7 +7,7 @@ export const profile = {
   nickname: "parkky",
   name: "Parth Kale",
   title: "AI Engineer",
-  tagline: "I draw intelligence onto the canvas — voice agents, LLMs & multimodal systems.",
+  tagline: "Building what comes after us",
   location: "Mumbai, India",
   // Path to your photo in /public (e.g. "/profile.jpg"). Empty = sketch placeholder.
   photo: "/profile.jpeg",
@@ -20,7 +20,7 @@ export const profile = {
   },
   // A short, hand-written intro shown near the top of the page.
   intro:
-    "Hey — I'm Parth. I build production-grade AI systems: voice agents that talk to thousands of people a day, language models trained from scratch, and multimodal pipelines that run on the edge. Scroll down and I'll sketch out how I got here.",
+    "Hey — I'm Parth. My work lives at the intersection of machine learning, distributed systems, and human interaction. I enjoy building things from first principles, pushing models beyond demos, and crafting AI that feels less like software and more like intelligence",
 };
 
 // ----------------------------------------------------------------------------
