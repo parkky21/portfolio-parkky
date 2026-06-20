@@ -12,6 +12,7 @@ import {
 } from "framer-motion";
 import { milestones, type Milestone } from "@/lib/data";
 import { ScribbleUnderline } from "./Doodles";
+import { playSound } from "@/lib/sound";
 
 type Pt = { x: number; y: number };
 
@@ -105,6 +106,7 @@ export function CareerPath() {
   const tipX = useMotionValue(0);
   const tipY = useMotionValue(0);
   const tipOpacity = useMotionValue(0);
+  const wasDrawing = useRef(false);
   useMotionValueEvent(progress, "change", (v) => {
     const p = pathRef.current;
     if (!p) return;
@@ -115,6 +117,10 @@ export function CareerPath() {
     tipX.set(pt.x);
     tipY.set(pt.y);
     tipOpacity.set(clamped > 0.005 && clamped < 0.995 ? 1 : 0);
+    // play a short "draw" squeak when the line first starts moving
+    const drawing = clamped > 0.01 && clamped < 0.99;
+    if (drawing && !wasDrawing.current) playSound("draw");
+    wasDrawing.current = drawing;
   });
 
   return (
@@ -277,6 +283,7 @@ function MilestoneCard({
       className="relative p-5 sm:p-6"
       initial={{ opacity: 0, x: side === "right" ? 40 : -40, y: 10 }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
+      onAnimationComplete={() => playSound("chime")}
       viewport={{ once: true, amount: 0.55 }}
       transition={{ duration: 0.55, ease: "easeOut" }}
       style={{ rotate: index % 2 === 0 ? -0.6 : 0.6 }}

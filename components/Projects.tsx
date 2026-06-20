@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { projects, type Project } from "@/lib/data";
 import { ScribbleUnderline } from "./Doodles";
+import { playSound } from "@/lib/sound";
 
 const noteColor: Record<Project["color"], string> = {
   yellow: "#fef3c7",
@@ -36,7 +37,7 @@ export function Projects() {
         {projects.map((p, i) => (
           <motion.article
             key={p.name}
-            className="sticky-note rounded-[3px] p-6"
+            className="sticky-note rounded-[3px] p-6 cursor-pointer"
             style={{
               background: noteColor[p.color],
               rotate: `${tilts[i % tilts.length]}deg`,
@@ -49,13 +50,28 @@ export function Projects() {
             }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
+            onHoverStart={() => playSound("pop")}
+            onTap={() => playSound("click")}
           >
             <span className="tape" aria-hidden />
 
-            <div className="mb-2 flex items-baseline justify-between gap-2">
+            <div className="mb-2 flex items-start justify-between gap-2">
               <h3 className="font-marker text-lg leading-tight text-ink">
                 {p.name}
               </h3>
+              {p.repo && (
+                <a
+                  href={p.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`GitHub repo for ${p.name}`}
+                  onClick={(e) => { e.stopPropagation(); playSound("click"); }}
+                  onMouseEnter={() => playSound("tick")}
+                  className="shrink-0 rounded-full border-2 border-ink/30 bg-white/50 px-2.5 py-1 font-hand text-xs font-bold text-ink/70 transition-all hover:border-ink hover:bg-white hover:text-ink"
+                >
+                  ⌥ GitHub ↗
+                </a>
+              )}
             </div>
             <p className="font-hand text-sm font-bold text-ink/55">{p.date}</p>
 

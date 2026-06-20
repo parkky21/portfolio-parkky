@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { profile } from "@/lib/data";
 import { Arrow, Sparkle } from "./Doodles";
+import { playSound } from "@/lib/sound";
 
 export function Contact() {
   return (
@@ -32,6 +33,8 @@ export function Contact() {
           <a
             href={`mailto:${profile.email}`}
             className="rounded-full bg-ink px-7 py-3 font-marker text-base text-board transition-transform hover:-translate-y-1 hover:rotate-[-1deg]"
+            onMouseEnter={() => playSound("tick")}
+            onClick={() => playSound("click")}
           >
             ✉ Email me
           </a>
@@ -40,6 +43,8 @@ export function Contact() {
             target="_blank"
             rel="noreferrer"
             className="rounded-full border-2 border-ink px-7 py-3 font-marker text-base text-ink transition-transform hover:-translate-y-1 hover:rotate-[1deg]"
+            onMouseEnter={() => playSound("tick")}
+            onClick={() => playSound("click")}
           >
             GitHub
           </a>
@@ -48,6 +53,8 @@ export function Contact() {
             target="_blank"
             rel="noreferrer"
             className="rounded-full border-2 border-ink px-7 py-3 font-marker text-base text-ink transition-transform hover:-translate-y-1 hover:rotate-[-1deg]"
+            onMouseEnter={() => playSound("tick")}
+            onClick={() => playSound("click")}
           >
             LinkedIn
           </a>

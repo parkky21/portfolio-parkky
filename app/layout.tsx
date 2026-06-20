@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Permanent_Marker, Kalam, Caveat } from "next/font/google";
 import "./globals.css";
 import { SketchDefs } from "@/components/SketchDefs";
+import { SoundProvider } from "@/components/SoundProvider";
 import { profile } from "@/lib/data";
 
 const marker = Permanent_Marker({
@@ -42,7 +43,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen">
         <SketchDefs />
-        {children}
+        <SoundProvider>{children}</SoundProvider>
       </body>
     </html>
   );

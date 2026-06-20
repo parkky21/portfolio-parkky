@@ -111,7 +111,8 @@ export type Project = {
   blurb: string;
   tags: string[];
   color: "yellow" | "pink" | "blue" | "green" | "orange" | "purple";
-  link?: string;
+  // Replace "#" with the real GitHub URL, e.g. "https://github.com/parkky21/slm"
+  repo?: string;
 };
 
 export const projects: Project[] = [
@@ -122,6 +123,7 @@ export const projects: Project[] = [
       "Pretrained an 84M-parameter GPT-2-inspired Marathi LM from scratch (6 layers, 6 heads, 384 dim). Built a custom 32K Marathi tokenizer and a 66K+ story dataset by translating TinyStories.",
     tags: ["PyTorch", "GPT-2", "Tokenizer", "Pretraining"],
     color: "orange",
+    repo: "#",
   },
   {
     name: "OpenBee — Offline Voice Assistant",
@@ -130,6 +132,7 @@ export const projects: Project[] = [
       "Fully offline voice AI (Speech → LLM → Voice) with zero cloud dependency. Whisper + Gemma 1B + Kokoro on LiveKit. TTFT < 80ms, TTS < 500ms on consumer hardware, with a React control dashboard.",
     tags: ["Whisper", "Gemma", "Kokoro", "LiveKit", "React"],
     color: "yellow",
+    repo: "#",
   },
   {
     name: "MemorySearch — Semantic Image Search",
@@ -138,6 +141,7 @@ export const projects: Project[] = [
       "Modular image retrieval using BLIP captioning + configurable embeddings (Qwen0.6B, GTE, Gemma). Config-driven, incremental indexing and multi-model similarity ranking without full re-indexing.",
     tags: ["BLIP", "Embeddings", "Retrieval", "Multimodal"],
     color: "blue",
+    repo: "#",
   },
   {
     name: "LocalMind — Local Agentic RAG",
@@ -146,6 +150,7 @@ export const projects: Project[] = [
       "Open-source, fully local conversational AI with LlamaIndex + LangGraph. Agentic RAG via dual tools (docs + web) and persistent memory. Q5-M quantized Jan-nano LLM (~60% VRAM savings).",
     tags: ["LlamaIndex", "LangGraph", "RAG", "FastAPI"],
     color: "green",
+    repo: "#",
   },
   {
     name: "Alice — Home Surveillance System",
@@ -154,14 +159,16 @@ export const projects: Project[] = [
       "Low-latency AI security using QwenVL-2.5 4B for real-time threat detection, quantized for ~43% VRAM reduction. Evaluation loop cut false positives ~35%; LiveKit + Twilio SIP calls homeowners with context-aware alerts.",
     tags: ["QwenVL", "Quantization", "LiveKit", "Twilio"],
     color: "purple",
+    repo: "#",
   },
   {
     name: "Draupadi — AI Safety App",
     date: "Nov 2024",
     blurb:
-      "Real-time distress detection app (React Native + TensorFlow + Twilio) that detects voice cues like “help” or screams. GPS tracking + auto-SMS alerts and an “I'm Safe” mode for user control.",
+      'Real-time distress detection app (React Native + TensorFlow + Twilio) that detects voice cues like "help" or screams. GPS tracking + auto-SMS alerts and an "I\'m Safe" mode for user control.',
     tags: ["React Native", "TensorFlow", "Twilio", "GPS"],
     color: "pink",
+    repo: "#",
   },
 ];
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { playSound } from "@/lib/sound";
 
 export function Polaroid({
   src,
@@ -19,6 +20,7 @@ export function Polaroid({
       animate={{ opacity: 1, y: 0, rotate: -3 }}
       transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
       whileHover={{ rotate: 0, scale: 1.02 }}
+      onHoverStart={() => playSound("pop")}
     >
       {/* the polaroid card */}
       <div className="relative bg-white p-3 pb-14 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.35)]">
