@@ -1,0 +1,214 @@
+// ============================================================================
+//  Portfolio content — everything here is editable. Change text, add items,
+//  reorder things, and the site updates automatically. No component edits needed.
+// ============================================================================
+
+export const profile = {
+  name: "Parth Kale",
+  title: "AI Engineer",
+  tagline: "I draw intelligence onto the canvas — voice agents, LLMs & multimodal systems.",
+  location: "Mumbai, India",
+  email: "parth.kale.dev@gmail.com",
+  phone: "+91 81087 09605",
+  socials: {
+    github: "https://github.com/parkky21",
+    linkedin: "https://linkedin.com/in/parkky",
+  },
+  // A short, hand-written intro shown near the top of the page.
+  intro:
+    "Hey — I'm Parth. I build production-grade AI systems: voice agents that talk to thousands of people a day, language models trained from scratch, and multimodal pipelines that run on the edge. Scroll down and I'll sketch out how I got here.",
+};
+
+// ----------------------------------------------------------------------------
+//  Career path — the milestones, drawn out in order (earliest → now).
+//  `kind` controls the color/icon: "education" | "work".
+// ----------------------------------------------------------------------------
+
+export type Milestone = {
+  kind: "education" | "work";
+  period: string;
+  title: string;
+  org: string;
+  detail: string;
+  highlights?: string[];
+};
+
+export const milestones: Milestone[] = [
+  {
+    kind: "education",
+    period: "2019 — 2020",
+    title: "Where it started",
+    org: "Navodaya English High School",
+    detail: "SSC — 92.80%. The first dots on the page.",
+  },
+  {
+    kind: "education",
+    period: "2021 — 2022",
+    title: "HSC · Science",
+    org: "KJ Somaiya College of Science & Commerce",
+    detail: "HSC Science — 80%. Started leaning hard into computers.",
+  },
+  {
+    kind: "education",
+    period: "2022 — 2026",
+    title: "B.Tech · IT + Honors in AI/ML",
+    org: "Vidyalankar Institute of Technology",
+    detail: "CGPA 8.81. Where the AI obsession really took shape.",
+  },
+  {
+    kind: "work",
+    period: "Apr — Jun 2025",
+    title: "AI Developer Intern",
+    org: "AlgoRoots Pvt Ltd",
+    detail: "First production system, straight into the deep end.",
+    highlights: [
+      "Built a production-scale call agent with RAG, function calling, prompt engineering & SIP + LiveKit — handling 60,000+ automated calls/day.",
+      "Implemented fault-tolerant, scalable backend services for high uptime.",
+      "Built logging & monitoring pipelines for real-time analytics.",
+    ],
+  },
+  {
+    kind: "work",
+    period: "Jul 2025 — May 2026",
+    title: "AI Researcher Intern",
+    org: "AlgoRoots Pvt Ltd",
+    detail: "Pushed into research — multilingual speech synthesis.",
+    highlights: [
+      "Designed & preprocessed a custom multilingual dataset for fine-tuning open-source TTS models.",
+      "Improved Hindi–English code-switching via fine-tuning an open-source model.",
+      "Enhanced speech quality & NLP performance for multilingual voice systems.",
+    ],
+  },
+  {
+    kind: "work",
+    period: "Jun 2026 — Present",
+    title: "AI Engineer",
+    org: "AlgoRoots Pvt Ltd",
+    detail: "Where the line reaches today.",
+    highlights: [
+      "Build & deploy production-grade AI agents for voice interviewing, proctoring & candidate assessment.",
+      "Develop full-stack AI systems across LLMs, speech recognition, speech synthesis & real-time comms.",
+      "Design automated evaluation frameworks that generate structured interview feedback.",
+      "Own the full lifecycle — prototyping, model integration, cloud deployment & monitoring.",
+    ],
+  },
+];
+
+// ----------------------------------------------------------------------------
+//  Projects — rendered as sticky notes on the board.
+//  `color` picks a sticky-note color: yellow | pink | blue | green | orange | purple
+// ----------------------------------------------------------------------------
+
+export type Project = {
+  name: string;
+  date: string;
+  blurb: string;
+  tags: string[];
+  color: "yellow" | "pink" | "blue" | "green" | "orange" | "purple";
+  link?: string;
+};
+
+export const projects: Project[] = [
+  {
+    name: "SLM — Marathi Language Model",
+    date: "Dec 2024",
+    blurb:
+      "Pretrained an 84M-parameter GPT-2-inspired Marathi LM from scratch (6 layers, 6 heads, 384 dim). Built a custom 32K Marathi tokenizer and a 66K+ story dataset by translating TinyStories.",
+    tags: ["PyTorch", "GPT-2", "Tokenizer", "Pretraining"],
+    color: "orange",
+  },
+  {
+    name: "OpenBee — Offline Voice Assistant",
+    date: "Mar 2026",
+    blurb:
+      "Fully offline voice AI (Speech → LLM → Voice) with zero cloud dependency. Whisper + Gemma 1B + Kokoro on LiveKit. TTFT < 80ms, TTS < 500ms on consumer hardware, with a React control dashboard.",
+    tags: ["Whisper", "Gemma", "Kokoro", "LiveKit", "React"],
+    color: "yellow",
+  },
+  {
+    name: "MemorySearch — Semantic Image Search",
+    date: "Jan 2026",
+    blurb:
+      "Modular image retrieval using BLIP captioning + configurable embeddings (Qwen0.6B, GTE, Gemma). Config-driven, incremental indexing and multi-model similarity ranking without full re-indexing.",
+    tags: ["BLIP", "Embeddings", "Retrieval", "Multimodal"],
+    color: "blue",
+  },
+  {
+    name: "LocalMind — Local Agentic RAG",
+    date: "Jul 2025",
+    blurb:
+      "Open-source, fully local conversational AI with LlamaIndex + LangGraph. Agentic RAG via dual tools (docs + web) and persistent memory. Q5-M quantized Jan-nano LLM (~60% VRAM savings).",
+    tags: ["LlamaIndex", "LangGraph", "RAG", "FastAPI"],
+    color: "green",
+  },
+  {
+    name: "Alice — Home Surveillance System",
+    date: "Feb — May 2025",
+    blurb:
+      "Low-latency AI security using QwenVL-2.5 4B for real-time threat detection, quantized for ~43% VRAM reduction. Evaluation loop cut false positives ~35%; LiveKit + Twilio SIP calls homeowners with context-aware alerts.",
+    tags: ["QwenVL", "Quantization", "LiveKit", "Twilio"],
+    color: "purple",
+  },
+  {
+    name: "Draupadi — AI Safety App",
+    date: "Nov 2024",
+    blurb:
+      "Real-time distress detection app (React Native + TensorFlow + Twilio) that detects voice cues like “help” or screams. GPS tracking + auto-SMS alerts and an “I'm Safe” mode for user control.",
+    tags: ["React Native", "TensorFlow", "Twilio", "GPS"],
+    color: "pink",
+  },
+];
+
+// ----------------------------------------------------------------------------
+//  Skills — grouped, rendered as marker-circled clusters.
+// ----------------------------------------------------------------------------
+
+export const skillGroups: { label: string; items: string[] }[] = [
+  {
+    label: "Programming",
+    items: ["Python", "JavaScript / TypeScript", "C++", "DSA"],
+  },
+  {
+    label: "AI & Machine Learning",
+    items: [
+      "LLMs",
+      "Generative AI",
+      "AI Agents",
+      "RAG",
+      "Fine-Tuning (LoRA, PEFT)",
+      "Quantization",
+      "Computer Vision",
+      "Multimodal AI",
+    ],
+  },
+  {
+    label: "Frameworks & Tools",
+    items: ["Hugging Face", "LangChain", "LlamaIndex", "LangGraph", "PyTorch", "TensorFlow", "vLLM"],
+  },
+  {
+    label: "Web & Backend",
+    items: ["React.js", "Next.js", "Node.js", "FastAPI", "REST APIs", "Realtime (Twilio, SIP)"],
+  },
+  {
+    label: "Cloud & Deployment",
+    items: ["AWS", "Azure", "Docker", "Vercel", "CI/CD (GitHub Actions, Jenkins)"],
+  },
+  {
+    label: "Databases",
+    items: ["PostgreSQL / NeonDB", "MongoDB"],
+  },
+];
+
+// ----------------------------------------------------------------------------
+//  Open source + writing
+// ----------------------------------------------------------------------------
+
+export const openSource = [
+  "Fixed an SDK bug in LiveKit affecting worker functionality — PR submitted, reviewed with maintainers & merged into the official repo.",
+  "Active contributor to open-source AI and voice-agent ecosystems.",
+];
+
+export const blogs: { title: string; link?: string }[] = [
+  { title: "GPT Architecture — a simple explanation", link: "#" },
+  { title: "Causal Attention & Multi-head Attention", link: "#" },
+];
