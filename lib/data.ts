@@ -113,6 +113,7 @@ export type Project = {
   color: "yellow" | "pink" | "blue" | "green" | "orange" | "purple";
   // Replace "#" with the real GitHub URL, e.g. "https://github.com/parkky21/slm"
   repo?: string;
+  link?: string;
 };
 
 export const projects: Project[] = [
@@ -124,6 +125,7 @@ export const projects: Project[] = [
     tags: ["PyTorch", "GPT-2", "Tokenizer", "Pretraining"],
     color: "orange",
     repo: "#",
+    link: "",
   },
   {
     name: "OpenBee — Offline Voice Assistant",
@@ -132,7 +134,7 @@ export const projects: Project[] = [
       "Fully offline voice AI (Speech → LLM → Voice) with zero cloud dependency. Whisper + Gemma 1B + Kokoro on LiveKit. TTFT < 80ms, TTS < 500ms on consumer hardware, with a React control dashboard.",
     tags: ["Whisper", "Gemma", "Kokoro", "LiveKit", "React"],
     color: "yellow",
-    repo: "#",
+    repo: "https://github.com/parkky21/OpenBee",
   },
   {
     name: "MemorySearch — Semantic Image Search",
@@ -141,7 +143,7 @@ export const projects: Project[] = [
       "Modular image retrieval using BLIP captioning + configurable embeddings (Qwen0.6B, GTE, Gemma). Config-driven, incremental indexing and multi-model similarity ranking without full re-indexing.",
     tags: ["BLIP", "Embeddings", "Retrieval", "Multimodal"],
     color: "blue",
-    repo: "#",
+    repo: "https://github.com/parkky21/MemorySearch",
   },
   {
     name: "LocalMind — Local Agentic RAG",
@@ -150,7 +152,7 @@ export const projects: Project[] = [
       "Open-source, fully local conversational AI with LlamaIndex + LangGraph. Agentic RAG via dual tools (docs + web) and persistent memory. Q5-M quantized Jan-nano LLM (~60% VRAM savings).",
     tags: ["LlamaIndex", "LangGraph", "RAG", "FastAPI"],
     color: "green",
-    repo: "#",
+    repo: "https://github.com/parkky21/LocalMind",
   },
   {
     name: "Alice — Home Surveillance System",
