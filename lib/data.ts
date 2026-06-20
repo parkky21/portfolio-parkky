@@ -224,6 +224,6 @@ export const openSource = [
 ];
 
 export const blogs: { title: string; link?: string }[] = [
-  { title: "GPT Architecture — a simple explanation", link: "#" },
-  { title: "Causal Attention & Multi-head Attention", link: "#" },
+  { title: "GPT Architecture — a simple explanation", link: "https://medium.com/@parkky/inside-the-magic-box-of-gpt-bde3bae13752" },
+  { title: "Causal Attention & Multi-head Attention", link: "https://medium.com/@parkky/inside-the-magic-box-2-causal-attention-and-multi-head-attention-0a9366da1d50" },
 ];
