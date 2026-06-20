@@ -15,9 +15,11 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+
+        {/* Logo */}
         <a
           href="#top"
-          className="font-marker text-lg sm:text-xl text-ink"
+          className="font-marker text-lg text-ink sm:text-xl"
           onMouseEnter={() => playSound("tick")}
           onClick={() => playSound("click")}
         >
@@ -25,12 +27,13 @@ export function Nav() {
           <span className="text-marker-blue">.</span>
         </a>
 
-        <nav className="flex items-center gap-4 sm:gap-6">
+        {/* Desktop nav links — hidden on mobile */}
+        <nav className="hidden items-center gap-6 sm:flex sm:gap-7">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="group relative font-hand text-base sm:text-lg text-ink/80 hover:text-ink transition-colors"
+              className="group relative font-hand text-lg text-ink/80 transition-colors hover:text-ink"
               onMouseEnter={() => playSound("tick")}
               onClick={() => playSound("click")}
             >
@@ -40,6 +43,11 @@ export function Nav() {
           ))}
           <MuteToggle />
         </nav>
+
+        {/* Mobile: mute toggle only */}
+        <div className="sm:hidden">
+          <MuteToggle />
+        </div>
       </div>
     </header>
   );
