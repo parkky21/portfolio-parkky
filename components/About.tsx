@@ -19,7 +19,7 @@ export function About() {
 
       <div className="relative mx-auto mt-6 inline-block">
         <span className="font-marker text-xl text-marker-orange">
-          AI, voice &amp; multimodal
+          {profile.introCircle}
         </span>
         <CircleScribble
           className="absolute -inset-x-6 -inset-y-3 h-[calc(100%+1.5rem)] w-[calc(100%+3rem)]"

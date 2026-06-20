@@ -7,7 +7,7 @@ export const profile = {
   nickname: "parkky",
   name: "Parth Kale",
   title: "AI Engineer",
-  tagline: "Building what comes after us",
+  tagline: "Building what comes after us - the age of artificial intelligence.",
   location: "Mumbai, India",
   // Path to your photo in /public (e.g. "/profile.jpg"). Empty = sketch placeholder.
   photo: "/profile.jpeg",
@@ -21,6 +21,8 @@ export const profile = {
   // A short, hand-written intro shown near the top of the page.
   intro:
     "Hey — I'm Parth. My work lives at the intersection of machine learning, distributed systems, and human interaction. I enjoy building things from first principles, pushing models beyond demos, and crafting AI that feels less like software and more like intelligence",
+  
+  introCircle:"Let's cook !",
 };
 
 // ----------------------------------------------------------------------------
