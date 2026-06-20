@@ -8,6 +8,9 @@ export const profile = {
   title: "AI Engineer",
   tagline: "I draw intelligence onto the canvas — voice agents, LLMs & multimodal systems.",
   location: "Mumbai, India",
+  // Path to your photo in /public (e.g. "/profile.jpg"). Empty = sketch placeholder.
+  photo: "/profile.jpeg",
+  photoCaption: "that's me! 👋",
   email: "parth.kale.dev@gmail.com",
   phone: "+91 81087 09605",
   socials: {
