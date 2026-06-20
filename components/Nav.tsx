@@ -16,7 +16,7 @@ export function Nav() {
           className="font-marker text-lg sm:text-xl text-ink"
         >
           {profile.nickname || profile.name.split(" ")[0]}
-          <span className="text-marker-blue"></span>
+          <span className="text-marker-blue">.</span>
         </a>
 
         <nav className="flex items-center gap-4 sm:gap-7">
