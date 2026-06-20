@@ -2,87 +2,62 @@
 
 import { motion } from "framer-motion";
 import { skillGroups } from "@/lib/data";
-import { ScribbleUnderline } from "./Doodles";
-
-const accents = [
-  "var(--color-marker-blue)",
-  "var(--color-marker-green)",
-  "var(--color-marker-orange)",
-  "var(--color-marker-purple)",
-  "var(--color-marker-red)",
-  "var(--color-marker-blue)",
-];
 
 export function Skills() {
   return (
-    <section id="skills" className="relative mx-auto max-w-6xl px-5 py-24">
-      <div className="mb-16 text-center">
-        <h2 className="relative inline-block font-marker text-4xl sm:text-5xl">
-          My Toolbox
-          <ScribbleUnderline
-            className="absolute -bottom-4 left-0 h-5 w-full"
-            color="var(--color-marker-green)"
-          />
-        </h2>
-        <p className="mx-auto mt-8 max-w-lg font-hand text-lg text-ink/70">
-          The pens, markers &amp; highlighters I reach for.
+    <section id="skills" className="relative mx-auto max-w-5xl px-5 py-24">
+
+      {/* Section header */}
+      <motion.div
+        className="mb-16"
+        initial={{ opacity: 0, y: 12 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+      >
+        <p className="font-hand text-sm uppercase tracking-[0.2em] text-ink/40 mb-2">
+          the toolkit
         </p>
-      </div>
+        <h2 className="font-marker text-4xl sm:text-5xl text-ink">
+          Skills
+        </h2>
+        {/* single thin rule — no sketch wobble */}
+        <div className="mt-5 h-px w-full bg-ink/12" />
+      </motion.div>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {skillGroups.map((group, i) => {
-          const accent = accents[i % accents.length];
-          return (
-            <motion.div
-              key={group.label}
-              className="relative p-6"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.45, delay: (i % 2) * 0.08 }}
-            >
-              <svg
-                className="sketch pointer-events-none absolute inset-0 h-full w-full"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-                aria-hidden
-              >
-                <rect
-                  x="2"
-                  y="2"
-                  width="96"
-                  height="96"
-                  rx="3"
-                  fill="#ffffff"
-                  stroke={accent}
-                  strokeWidth="2.5"
-                  vectorEffect="non-scaling-stroke"
-                />
-              </svg>
+      {/* Skill rows */}
+      <div className="divide-y divide-ink/10">
+        {skillGroups.map((group, i) => (
+          <motion.div
+            key={group.label}
+            className="grid grid-cols-1 gap-4 py-7 sm:grid-cols-[200px_1fr] sm:gap-8 sm:py-8"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4, delay: i * 0.06 }}
+          >
+            {/* Category label */}
+            <p className="font-hand text-sm font-bold uppercase tracking-widest text-ink/40 sm:pt-0.5">
+              {group.label}
+            </p>
 
-              <div className="relative">
-                <h3
-                  className="mb-4 font-marker text-xl"
-                  style={{ color: accent }}
+            {/* Pills */}
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-sm border border-ink/20 bg-transparent px-3 py-1 font-hand text-[15px] text-ink/80 transition-colors hover:border-ink/60 hover:text-ink"
                 >
-                  {group.label}
-                </h3>
-                <div className="flex flex-wrap gap-2.5">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border-2 px-3 py-1 font-hand text-sm font-bold text-ink"
-                      style={{ borderColor: accent }}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        ))}
       </div>
+
+      {/* closing rule */}
+      <div className="mt-0 h-px w-full bg-ink/12" />
     </section>
   );
 }
