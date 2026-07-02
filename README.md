@@ -45,3 +45,8 @@ Whiteboard palette and tokens live in [`app/globals.css`](app/globals.css)
 
 Built with Next.js, Tailwind CSS v4, and Framer Motion.
 # portfolio-parkky
+
+
+Portfolio inspirations (Crazy)
+p1- [https://shreyasama.framer.website/]
+p2- [https://myscrapbook.framer.website/]
