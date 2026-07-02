@@ -124,8 +124,7 @@ export const projects: Project[] = [
       "Pretrained an 84M-parameter GPT-2-inspired Marathi LM from scratch (6 layers, 6 heads, 384 dim). Built a custom 32K Marathi tokenizer and a 66K+ story dataset by translating TinyStories.",
     tags: ["PyTorch", "GPT-2", "Tokenizer", "Pretraining"],
     color: "orange",
-    repo: "#",
-    link: "",
+    repo: "https://github.com/parkky21/Marathi-SLM",
   },
   {
     name: "OpenBee — Offline Voice Assistant",
@@ -161,7 +160,7 @@ export const projects: Project[] = [
       "Low-latency AI security using QwenVL-2.5 4B for real-time threat detection, quantized for ~43% VRAM reduction. Evaluation loop cut false positives ~35%; LiveKit + Twilio SIP calls homeowners with context-aware alerts.",
     tags: ["QwenVL", "Quantization", "LiveKit", "Twilio"],
     color: "purple",
-    repo: "#",
+    repo: "https://github.com/parkky21/Alice",
   },
   {
     name: "Draupadi — AI Safety App",
